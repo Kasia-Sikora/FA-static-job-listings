@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.header {
+    background-color: $cyanBadgeColor;
+    position: relative;
+  
+    .logo, .mobileLogo{
+        margin-bottom: -5px;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .opacity {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      background-color: $backgroundColor;
+      top: 0;
+    }
+  }

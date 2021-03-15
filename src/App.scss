@@ -1,0 +1,17 @@
+$cyanBadgeColor: hsl(180, 29%, 50%);
+$backgroundColor: hsl(180, 52%, 96%);
+$filterTabletsColor: hsl(180, 31%, 95%);
+$detailsColor: hsl(180, 8%, 52%);
+$badgeDarkAndRole: hsl(180, 14%, 20%);
+$basicFontSize: 15px;
+$listElements: hsla(0, 0%, 100%, 0.897);
+$borderRadius: 5px;
+
+.App {
+  background-color: $backgroundColor;
+  min-height: 100vh;
+  width: 100%;
+  font-size: $basicFontSize;
+}
+
+
