@@ -20,7 +20,6 @@ const Content = ({ jobs }) => {
     if (!searchedAttr.length) {
       setFilteredJobs(jobs)
     } else {
-
       let tempJobList = [];
       let count = 0;
       for (let job of jobs) {
