@@ -1,0 +1,52 @@
+@import "../../../App.scss";
+
+.none {
+  display: none;
+}
+
+.seachBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 1px 10px 10px 6px hsla(180, 29%, 50%, 0.15);
+  border-radius: $borderRadius;
+  margin-top: -50px;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.clear{
+    background-color: unset;
+    color: $detailsColor;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  .chip {
+    height: 30px;
+    border: none;
+    background-color: #effafa;
+    color: #5ba4a4;
+    font-weight: 700;
+    margin: 15px 15px 0 0;
+    padding: 0 0 0 6px;
+    border-radius: 5px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    .close {
+      background-color: $cyanBadgeColor;
+      height: 100%;
+      width: 36px;
+      margin-left:6px;
+      fill: white;
+      padding: 3px;
+    }
+  }
+}
