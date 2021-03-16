@@ -3,7 +3,7 @@ import styles from "./ListItem.module.scss";
 import { BsDot } from "react-icons/bs";
 import Badge from "./Badge";
 
-const ListItem = ({ job, filterJobsHandler }) => {
+const ListItem = ({ job, searchAttrHandler }) => {
   const {
     id,
     company,
@@ -28,6 +28,7 @@ const ListItem = ({ job, filterJobsHandler }) => {
     name: "featured",
     value: "FEATURED",
   };
+
 
   return (
     <div
@@ -65,13 +66,13 @@ const ListItem = ({ job, filterJobsHandler }) => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <button onClick={ () => filterJobsHandler('role', role)} key={id + role}>{role}</button>
-        <button onClick={ () => filterJobsHandler('level', level)} key={id + level}>{level}</button>
+        <button onClick={ () => searchAttrHandler( role)} key={id + role}>{role}</button>
+        <button onClick={ () => searchAttrHandler(level)} key={id + level}>{level}</button>
         {languages.map((language) => (
-          <button onClick={ () => filterJobsHandler('languages', language)} key={id + language}>{language}</button>
+          <button onClick={ () => searchAttrHandler(language)} key={id + language}>{language}</button>
         ))}
         {tools.map((tool) => (
-          <button onClick={ () => filterJobsHandler('tools', tool)} key={id + tool}>{tool}</button>
+          <button onClick={ () => searchAttrHandler(tool)} key={id + tool}>{tool}</button>
         ))}
       </div>
     </div>
