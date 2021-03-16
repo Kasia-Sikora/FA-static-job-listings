@@ -38,17 +38,18 @@ const ListItem = ({ job, searchAttrHandler }) => {
           : styles.listItem
       }
     >
-      <div className={styles.itemContent}>
-        <div className={styles.avatar}>
+      <div className={styles.avatar}>
           <img src={logo.slice(1)} alt="logo" />
         </div>
+      <div className={styles.itemContent}>
+        
         <div className={styles.info}>
           <ul className={styles.companyData}>
             <li>
               {company} {job.new ? <Badge type={newBadge} /> : ""}{" "}
               {featured ? <Badge type={featuredBadge} /> : ""}
             </li>
-            <li>{position}</li>
+            <li><span onClick={ () => searchAttrHandler(position)}>{position}</span></li>
             <li>
               <ul className={styles.details}>
                 <li>{postedAt}</li>

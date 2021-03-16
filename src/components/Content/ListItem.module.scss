@@ -11,22 +11,23 @@
   display: flex;
   flex-wrap: wrap;
 
-  &.featured{
+
+  &.featured {
     border-left: 5px solid $cyanBadgeColor;
   }
 
   .itemContent {
     border-bottom: 1px solid $detailsColor;
     width: 100%;
+  }
 
-    .avatar {
-      width: 50px;
-      position: absolute;
-      top: -25px;
+  .avatar {
+    width: 50px;
+    position: absolute;
+    top: -25px;
 
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
     }
   }
 }
@@ -42,13 +43,15 @@
       color: $cyanBadgeColor;
       font-weight: 700;
       display: inline;
-      // display: inline-flex;
     }
 
-    &:nth-child(2) {
+    &:nth-child(2) > span {
       font-weight: 700;
       color: $badgeDarkAndRole;
       font-size: $basicFontSize;
+      &:hover {
+        color: $cyanBadgeColor;
+      }
     }
   }
 
@@ -64,14 +67,49 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
+
+  button {
+    border: none;
+    background-color: $backgroundColor;
+    color: $cyanBadgeColor;
+    font-weight: 700;
+    padding: 10px 6px;
+    margin: 15px 15px 0 0;
+    border-radius: $borderRadius;
+
+    &:hover {
+      color: $listElements;
+      background-color: $cyanBadgeColor;
+    }
+  }
 }
 
-button {
-  border: none;
-  background-color: $backgroundColor;
-  color: $cyanBadgeColor;
-  font-weight: 700;
-  padding: 10px 6px;
-  margin: 15px 15px 0 0;
-  border-radius: $borderRadius;
+@media only screen and (min-width: 769px) {
+  .listItem {
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .itemContent {
+      border-bottom: unset;
+      width: 50%;
+    }
+
+    .avatar {
+      width: 100px;
+      position: relative;
+      top: unset;
+      margin-right: 20px;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .buttons {
+    align-self: center;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 8px;
+  }
 }
