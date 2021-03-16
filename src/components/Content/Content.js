@@ -23,10 +23,6 @@ const Content = ({ jobs }) => {
     for (let job of jobs) {
       for (let attr of searchedAttr) {
         for (let value of Object.values(job)) {
-          if (count === searchedAttr.length) {
-            tempJobList = [...tempJobList, job]
-            break;
-          }
           if (typeof value === 'object') {
             if (value.includes(attr)) {
               count++
@@ -34,6 +30,13 @@ const Content = ({ jobs }) => {
           } else if (value === attr) {
             count++;
           }
+          if (count === searchedAttr.length) {
+            tempJobList = [...tempJobList, job]
+            break;
+          }
+        }
+        if(count === 0){
+          break;
         }
       }
       count = 0;
