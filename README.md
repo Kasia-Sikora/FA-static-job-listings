@@ -4,7 +4,7 @@ This project was made to practice react, scss and RWD.
 
 Mobile: 
 
-<img src="https://raw.githubusercontent.com/Kasia-Sikora/FA-static-job-listings/main/src/assets/screenshots/ScreenshotMobile.png">
+<img src="https://raw.githubusercontent.com/Kasia-Sikora/FA-static-job-listings/main/src/assets/screenshots/ScreenshotMobile.png" width="75%" height="75%">
 
 Desktop:
 
