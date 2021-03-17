@@ -45,6 +45,7 @@
           font-size: $basicFontSize;
           &:hover {
             color: $cyanBadgeColor;
+            cursor: pointer;
           }
         }
       }
