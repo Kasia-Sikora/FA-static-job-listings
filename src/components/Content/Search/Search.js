@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Search.module.scss';
-import Chip from './Chip';
+import Chip from '../../Utils/Chip';
 
 const Search = ({ searchedAttr, removeCategoriesHandler }) => {
     return (

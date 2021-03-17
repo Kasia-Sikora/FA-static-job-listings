@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Search.module.scss';
+import styles from './Utils.module.scss';
 import { IoClose } from "react-icons/io5";
 
 const Chip = ({ value, removeCategoriesHandler }) => {

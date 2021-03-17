@@ -17,11 +17,11 @@ const DetailsList = ({ detail, index, size, searchAttrHandler }) => {
     return (
         (typeof detail === 'object') ?
             (<li>
-                {detail.company} {detail.new ? <Badge type={newBadge} /> : ""}
+                {detail.name} {detail.new ? <Badge type={newBadge} /> : ""}
                 {detail.featured ? <Badge type={featuredBadge} /> : ""}
             </li>) :
             (searchAttrHandler ? 
-                (<li><span onClick={() => searchAttrHandler(detail)}>{detail}</span></li>) :
+                (<li><span onClick={() => searchAttrHandler(detail)} tabIndex={0}>{detail}</span></li>) :
                 ((<><li>{detail}</li> {index < size ? <BsDot /> : ''}</>)))
     )
 }

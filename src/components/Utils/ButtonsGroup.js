@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import styles from "./../Content/List/ListItem/ListItem.module.scss";
+import styles from "./Utils.module.scss";
 
 const ButtonsGroup = ({ buttons, searchAttrHandler }) => {
     return (

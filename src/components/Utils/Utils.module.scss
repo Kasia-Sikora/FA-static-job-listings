@@ -1,0 +1,65 @@
+@import "../../App.scss";
+
+.badge {
+  color: $filterTabletsColor;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 10px 5px 10px;
+  border-radius: 25px;
+  font-size: 0.9em;
+
+  &.new {
+    background-color: $cyanBadgeColor;
+  }
+
+  &.featured {
+    background-color: $badgeDarkAndRole;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    @include button;
+    padding: 10px 6px;
+    margin: 15px 15px 0 0;
+
+    &:hover {
+      color: $listElements;
+      background-color: $cyanBadgeColor;
+    }
+  }
+}
+
+.chip {
+  @include button;
+  margin: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 6px;
+
+  .close {
+    background-color: $cyanBadgeColor;
+    height: 100%;
+    width: 36px;
+    margin-left: 6px;
+    fill: white;
+    padding: 3px;
+
+    &:hover {
+      background-color: $badgeDarkAndRole;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .buttons {
+    align-self: center;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 8px;
+  }
+}

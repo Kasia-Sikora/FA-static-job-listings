@@ -1,11 +1,10 @@
 import React from "react";
-import styles from "./../Content.module.scss";
 import ListItem from "./ListItem/ListItem";
 
 const ListContainer = ({ filteredJobs, searchAttrHandler }) => {
 
   return (
-    <div className={styles.list}>
+    <>
       {filteredJobs.map((job) => (
         <ListItem
           key={job.id}
@@ -13,7 +12,7 @@ const ListContainer = ({ filteredJobs, searchAttrHandler }) => {
           searchAttrHandler={searchAttrHandler}
         />
       ))}
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Badge.module.scss'
+import styles from './Utils.module.scss'
 
 const Badge = ({ type }) => {
     return (
