@@ -1,0 +1,80 @@
+@import "../../../../App.scss";
+
+.listItem {
+  background-color: $listElements;
+  box-shadow: 1px 10px 10px 6px hsla(180, 29%, 50%, 0.15);
+  border-radius: $borderRadius;
+  margin: 50px 0;
+  padding: 20px;
+  position: relative;
+  font-size: $smallerFontSize;
+  display: flex;
+  flex-wrap: wrap;
+
+  &.featured {
+    border-left: 5px solid $cyanBadgeColor;
+  }
+
+  .avatar {
+    width: 50px;
+    position: absolute;
+    top: -25px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .itemContent {
+    border-bottom: 1px solid $detailsColor;
+    width: 100%;
+
+    .companyData {
+      li {
+        padding: 6px 0;
+
+        &:first-of-type {
+          color: $cyanBadgeColor;
+          font-weight: $boldFont;
+          display: inline;
+        }
+
+        &:nth-child(2) > span {
+          font-weight: $boldFont;
+          color: $badgeDarkAndRole;
+          font-size: $basicFontSize;
+          &:hover {
+            color: $cyanBadgeColor;
+          }
+        }
+      }
+
+      .details {
+        li {
+          display: inline;
+          font-weight: 400;
+          color: $detailsColor;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .listItem {
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .itemContent {
+      border-bottom: unset;
+      width: 50%;
+    }
+
+    .avatar {
+      width: 100px;
+      position: relative;
+      top: unset;
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,11 +1,10 @@
 import React from "react";
-import styles from "./Content.module.scss";
-import ListItem from "./ListItem";
+import ListItem from "./ListItem/ListItem";
 
-const List = ({ filteredJobs, searchAttrHandler}) => {
-  
+const ListContainer = ({ filteredJobs, searchAttrHandler }) => {
+
   return (
-    <div className={styles.list}>
+    <>
       {filteredJobs.map((job) => (
         <ListItem
           key={job.id}
@@ -13,8 +12,8 @@ const List = ({ filteredJobs, searchAttrHandler}) => {
           searchAttrHandler={searchAttrHandler}
         />
       ))}
-    </div>
+    </>
   );
 };
 
-export default List;
+export default ListContainer;

@@ -7,7 +7,7 @@
 .seachBar {
   display: flex;
   justify-content: space-between;
-  background-color: hsla(0, 0%, 100%, 0.966);
+  background-color: $lightWhite;
   box-shadow: 1px 10px 10px 6px hsla(180, 29%, 50%, 0.15);
   border-radius: $borderRadius;
   margin-top: -50px;
@@ -16,50 +16,19 @@
   height: auto;
 }
 
-.clear{
-    background-color: unset;
-    color: $detailsColor;
-    border: none;
-    font-weight: 700;
-    padding: 0;
-    align-self: center;
+.clear {
+  @include button;
+  background-color: unset;
+  color: $detailsColor;
 
-    &:hover{
-        color: $cyanBadgeColor;
-        text-decoration: underline;
-    }
+  &:hover {
+    color: $cyanBadgeColor;
+    text-decoration: underline;
+  }
 }
 
 .chips {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-  .chip {
-    height: 30px;
-    border: none;
-    background-color: #effafa;
-    color: #5ba4a4;
-    font-weight: 700;
-    margin: 8px;
-    border-radius: 5px;
-    height: 30px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 0 0 0  6px;
-
-    .close {
-      background-color: $cyanBadgeColor;
-      height: 100%;
-      width: 36px;
-      margin-left:6px;
-      fill: white;
-      padding: 3px;
-
-      &:hover{
-        background-color: $badgeDarkAndRole;
-      }
-    }
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }

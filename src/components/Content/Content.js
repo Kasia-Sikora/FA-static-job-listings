@@ -1,58 +1,35 @@
 import React, { useState, useEffect } from "react";
+import data from '../../assets/data.json';
 import styles from "./Content.module.scss";
-import List from "./List";
+import ListContainer from "./List/ListContainer";
 import Search from "./Search/Search";
 
-const Content = ({ jobs }) => {
+const Content = () => {
+  const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState(jobs);
   const [searchedAttr, setSearchedAttr] = useState([]);
 
   useEffect(() => {
-    setFilteredJobs(jobs);
-  }, [jobs]);
+    setJobs(data);
+  }, [])
 
   useEffect(() => {
-    filterJobsHandler();
-  }, [searchedAttr]);
-
-
-  const filterJobsHandler = () => {
     if (!searchedAttr.length) {
       setFilteredJobs(jobs)
     } else {
       let tempJobList = [];
-      let count = 0;
       for (let job of jobs) {
-        for (let attr of searchedAttr) {
-          for (let value of Object.values(job)) {
-            if (typeof value === 'object') {
-              if (value.includes(attr)) {
-                count++
-              }
-            } else if (value === attr) {
-              count++;
-            }
-            if (count === searchedAttr.length) {
-              tempJobList = [...tempJobList, job]
-              break;
-            }
-          }
-          if (count === 0) {
-            break;
-          }
+        if (searchedAttr.every(attribute => JSON.stringify(job).search(attribute) > -1)) {
+          tempJobList = [...tempJobList, job]
         }
-        count = 0;
       }
-      setFilteredJobs(tempJobList);
+      setFilteredJobs(tempJobList)
     }
-  };
+  }, [searchedAttr, jobs]);
 
   const searchAttrHandler = (value) => {
     if (!searchedAttr.includes(value)) {
       setSearchedAttr(searchedAttr => [...searchedAttr, value])
-      setSearchedAttr((searchedAttr) => {
-        return searchedAttr;
-      });
     }
   }
 
@@ -61,15 +38,13 @@ const Content = ({ jobs }) => {
       setSearchedAttr(searchedAttr.filter(attribute => attribute !== value))
     } else {
       setSearchedAttr([]);
-      setFilteredJobs(jobs)
     }
   }
-
 
   return (
     <div className={styles.content}>
       <Search searchedAttr={searchedAttr} removeCategoriesHandler={removeCategoriesHandler} />
-      <List filteredJobs={filteredJobs} searchAttrHandler={searchAttrHandler} />
+      <ListContainer filteredJobs={filteredJobs} searchAttrHandler={searchAttrHandler} />
     </div>
   );
 };

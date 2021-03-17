@@ -1,0 +1,29 @@
+$cyanBadgeColor: hsl(180, 29%, 50%);
+$backgroundColor: hsl(180, 52%, 96%);
+$filterTabletsColor: hsl(180, 31%, 95%);
+$detailsColor: hsl(180, 8%, 52%);
+$badgeDarkAndRole: hsl(180, 14%, 20%);
+$basicFontSize: 15px;
+$smallerFontSize: 13px;
+$listElements: hsla(0, 0%, 100%, 0.897);
+$borderRadius: 6px;
+$lightWhite: hsla(0, 0%, 100%, 0.966);
+$boldFont: 700;
+$basicFontWeight: 500;
+
+@mixin button {
+  border: none;
+  border-radius: $borderRadius;
+  background-color: $backgroundColor;
+  color: $cyanBadgeColor;
+  font-weight: $boldFont;
+  
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
