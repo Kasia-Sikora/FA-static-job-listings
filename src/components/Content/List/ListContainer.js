@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./../Content.module.scss";
-import ListItem from "./ListItem";
+import ListItem from "./ListItem/ListItem";
 
-const List = ({ filteredJobs, searchAttrHandler}) => {
-  
+const ListContainer = ({ filteredJobs, searchAttrHandler }) => {
+
   return (
     <div className={styles.list}>
       {filteredJobs.map((job) => (
@@ -17,4 +17,4 @@ const List = ({ filteredJobs, searchAttrHandler}) => {
   );
 };
 
-export default List;
+export default ListContainer;

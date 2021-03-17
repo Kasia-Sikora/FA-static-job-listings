@@ -1,0 +1,18 @@
+@import "../../App.scss";
+
+.badge {
+  color: $filterTabletsColor;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 10px 5px 10px;
+  border-radius: 25px;
+  font-size: 0.8em;
+}
+
+.featured {
+  background-color: $badgeDarkAndRole;
+}
+
+.new {
+  background-color: $cyanBadgeColor;
+}

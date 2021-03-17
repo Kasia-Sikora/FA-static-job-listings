@@ -6,7 +6,7 @@ const Chip = ({ value, removeCategoriesHandler }) => {
     return (
         <button className={styles.chip} onClick={() => removeCategoriesHandler(value)}>
             {value}
-                <IoClose className={styles.close}/>
+            <IoClose className={styles.close} />
         </button>
     )
 }

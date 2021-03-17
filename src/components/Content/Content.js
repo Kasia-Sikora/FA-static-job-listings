@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import data from '../../assets/data.json';
 import styles from "./Content.module.scss";
-import List from "./List/List";
+import ListContainer from "./List/ListContainer";
 import Search from "./Search/Search";
 
 const Content = () => {
@@ -38,14 +38,13 @@ const Content = () => {
       setSearchedAttr(searchedAttr.filter(attribute => attribute !== value))
     } else {
       setSearchedAttr([]);
-      setFilteredJobs(jobs)
     }
   }
 
   return (
     <div className={styles.content}>
       <Search searchedAttr={searchedAttr} removeCategoriesHandler={removeCategoriesHandler} />
-      <List filteredJobs={filteredJobs} searchAttrHandler={searchAttrHandler} />
+      <ListContainer filteredJobs={filteredJobs} searchAttrHandler={searchAttrHandler} />
     </div>
   );
 };
